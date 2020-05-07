@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard - Geral</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- URL para o local onde o font awesome está instalado -->
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<body>
+    <div class="menu">
+        <header>
+            DASHBOARD Winetec
+        </header>
+        <nav>
+            <ul>
+                <li class="ativo"><i class="fas fa-tachometer-alt"></i><a
+                        href="estabelecimento_1_geral.html">Dashboard</a></li>
+                <li></i><i class="fas fa-boxes"></i><a href="../estoque.html">Estoque</a></li>
+                <li><i class="far fa-file-alt"></i><a href="../relatorio.html">Relatórios</a></li>
+                <li><i class="fas fa-chart-line"></i></i><a href="../estatisticas.html">Estatísticas</a></li>
+                <li><i class="fas fa-user-circle"></i><a href="../perfil.html">Perfil</a></li>
+                <li><i class="fas fa-cog"></i><a href="../configuracoes.html">Configurações</a></li>
+                <li><i class="fas fa-question-circle"></i><a href="../suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </div>
+    <article>
+        <div class="conteudo">
+            <div class="caixa">
+                <div class="menu_parcial">
+                    <div class="menu_estabelecimento">
+                        <nav class="menu_estabelecimento">
+                            <ul>
+                                <li><a href="../estabelecimento_1/estabelecimento_1_geral.html">Estabelecimento 1</a>
+                                </li>
+                                <li class="menu_parcial_ativo"><a href="estabelecimento_2_geral.html">Estabelecimento
+                                        2</a></li>
+                                <li><a href="../estabelecimento_3/estabelecimento_3_geral.html">Estabelecimento 3</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="menu_opcoes">
+                        <nav class="menu_parcial">
+                            <ul>
+                                <li><a href="estabelecimento_2_geral.html">Geral</a></li>
+                                <li><a href="estabelecimento_2_temperatura.html">Temperatura</a></li>
+                                <li><a href="estabelecimento_2_umidade.html">Umidade</a></li>
+                                <li class="menu_parcial_ativo"><a
+                                        href="estabelecimento_2_periodicamente.html">Periodicamente</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <br><br><br><br><br><br>
+                <div class="div_consulta">
+                    <header>
+                        <h2>Consultar por periodos</h2>
+                    </header>
+                    <select class="elementos_consulta" name="" id="select_dia">
+                        <option  value="0">- Dia -</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+
+                    <select class="elementos_consulta" name="" id="select_mes">
+                        <option  value="0">- Mês -</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+
+                    <select class="elementos_consulta" name="" id="select_ano">
+                        <option value="0">- Ano -</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                    <button onclick="pesquisa()" id="button_pesquisa_consulta" class="elementos_consulta"><i
+                            class="fas fa-search"></i>
+                        Pesquisar</button>
+                </div>
+                <div style="display: none" id="div_resultado_pesquisa" class="div_resultado_pesquisa">
+                    <header>
+                        <p>Resultados para a sua Pesquisa</p>
+                    </header>
+                    <div class="graficos">
+                        <br>
+                        <h3 id='periodo' style="color: black; margin-left: 48%;"></h3> <!--PERÍODO EXIBIDO EM CIMA DO GRÁFICO DE TEMPERATURA-->
+                        <table class="graficos_dia">
+                            <tr>
+                                <td><canvas id='myChart'></canvas></td>
+                                <td><canvas id='canvas'></canvas></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+    </article>
+</body>
+
+</html>
+<script>
+  function pesquisa(){
+       div_resultado_pesquisa.style.display= "block";
+       
+       var ctx = null;
+       var myChart = null;
+
+        if(select_ano.value != 0){ 
+            if(select_mes.value != 0){
+              
+               if(select_dia.value != 0){ //NESSE CASO TEMOS DIA DETALHADO DE 3 EM 3 HORAS
+
+               // GRÁFICO DE TEMPERATURA
+
+                periodo.innerHTML = 'NO DIA'; 
+                    ctx = document.getElementById('myChart').getContext('2d');
+                    myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['00:00', '03:00', '06:00', '09:00','12:00','15:00','18:00','21:00'],
+                        datasets: [{
+                            label: 'temperatura em °C',
+                            data: [12, 19, 3, 5, 2, 3,13,6],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rrgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                          }
+                        }
+                    });
+
+
+                    //GRÁFICO DE UMIDADE
+
+                    periodo.innerHTML = 'NO DIA'; 
+                    ctx = document.getElementById('canvas').getContext('2d');
+                    myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['00:00', '03:00', '06:00', '09:00','12:00','15:00','18:00','21:00'],
+                        datasets: [{
+                            label: 'Umidade em %',
+                            data: [12, 19, 3, 5, 2, 3,13,6],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rrgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                          }
+                        }
+                    });
+               }  
+               else{ // NESSE CASO TEMOS MÊS DETALHADO EM SEMANAS
+
+               // GRÁFICO DE TEMPERATURA
+
+                    periodo.innerHTML = 'NO MÊS'; 
+                    ctx = document.getElementById('myChart').getContext('2d');
+                    myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Semana 01', 'Semana 02', 'Semana 03', 'Semana 04'],
+                        datasets: [{
+                            label: 'temperatura em °C',
+                            data: [12, 19, 3, 5],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rrgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                          }
+                        }
+                    });
+
+                    //GRÁFICO DE UMIDADE
+
+                    periodo.innerHTML = 'NO MÊS'; 
+                    ctx = document.getElementById('canvas').getContext('2d');
+                    myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Semana 01', 'Semana 02', 'Semana 03', 'Semana 04'],
+                        datasets: [{
+                            label: 'Umidade em %',
+                            data: [12, 19, 3, 5],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rrgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                          }
+                        }
+                    });
+
+               }
+            }
+            
+            else{ //NESSE CASO TEMOS APENAS O ANO DETALHADO POR MÊS
+
+                // GRÁFICO DE TEMPERATURA
+
+                periodo.innerHTML = 'NO ANO';
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                    datasets: [{
+                        label: 'temperatura em °C',
+                        data: [12, 19, 3, 5, 2, 3,13,6,9,4,8,10,15],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rrgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            //GRÁFICO DE UMIDADE
+
+            periodo.innerHTML = 'NO ANO';
+                var ctx = document.getElementById('canvas').getContext('2d');
+                var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                    datasets: [{
+                        label: 'Umidade em %',
+                        data: [12, 19, 3, 5, 2, 3,13,6,9,4,8,10,15],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rrgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        }
+    }
+
+}
+</script>
