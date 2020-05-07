@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard - Geral</title>
+
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+
+    <!-- URL para o local onde o font awesome está instalado -->
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<body>
+    <div class="menu">
+        <header>
+            DASHBOARD Winetec
+        </header>
+        <nav>
+            <ul>
+                <li class="ativo"><i class="fas fa-tachometer-alt"></i><a
+                        href="estabelecimento_1_geral.html">Dashboard</a></li>
+                <li></i><i class="fas fa-boxes"></i><a href="../estoque.html">Estoque</a></li>
+                <li><i class="far fa-file-alt"></i><a href="../relatorio.html">Relatórios</a></li>
+                <li><i class="fas fa-chart-line"></i></i><a href="../estatisticas.html">Estatísticas</a></li>
+                <li><i class="fas fa-user-circle"></i><a href="../perfil.html">Perfil</a></li>
+                <li><i class="fas fa-cog"></i><a href="../configuracoes.html">Configurações</a></li>
+                <li><i class="fas fa-question-circle"></i><a href="../suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </div>
+    <article>
+        <div class="conteudo">
+            <div class="caixa">
+                <div class="menu_parcial">
+                    <div class="menu_estabelecimento">
+                        <nav class="menu_estabelecimento">
+                            <ul>
+                                <li class="menu_parcial_ativo"><a href="estabelecimento_1_geral.html">Estabelecimento
+                                        1</a></li>
+                                <li><a href="../estabelecimento_2/estabelecimento_2_geral.html">Estabelecimento 2</a>
+                                </li>
+                                <li><a href="../estabelecimento_3/estabelecimento_3_geral.html">Estabelecimento 3</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="menu_opcoes">
+                        <nav class="menu_parcial">
+                            <ul>
+                                <li class="menu_parcial_ativo"><a href="estabelecimento_1_geral.html">Geral</a></li>
+                                <li><a href="estabelecimento_1_temperatura.html">Temperatura</a></li>
+                                <li><a href="estabelecimento_1_umidade.html">Umidade</a></li>
+                                <li><a href="estabelecimento_1_periodicamente.html">Periodicamente</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <br><br><br><br>
+
+
+
+
+
+                <div class="graficos">
+                    <table class="graficos_tempo_real">
+                        <th colspan="2">Setor 1</th>
+                        <tr>
+                            <td>
+                                <b>Temperatura</b> <b id="valor_leitura_temp_setor1"></b> <br>
+
+                                <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
+                                    <b id="b_leitura_temp_setor1">?</b>
+                                </div>
+                                <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+                                <canvas id="myChart_temp_setor1"></canvas>
+                            </td>
+
+
+
+                            <td>
+                                <b>Umidade</b> <b id="valor_leitura_umid_setor1"></b> <br>
+                                <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
+                                    <b id="b_leitura_umid_setor1">?</b>
+                                </div>
+                                <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+                                <canvas id="myChart_umid_setor1"></canvas>
+
+                            </td>
+                        </tr>
+
+                        <th colspan="2">Setor 2</th>
+                        <tr>
+                            <td>
+                                <b>Temperatura</b> <b id="valor_leitura_temp_setor2"></b> <br>
+                                <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
+                                    <b id="b_leitura_temp_setor2">?</b>
+                                </div>
+
+                                <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+
+                                <canvas id="myChart_temp_setor2"></canvas>
+
+                            </td>
+                            <td>
+                                <b>Umidade</b> <b id="valor_leitura_umid_setor2"></b> <br>
+                                <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
+                                    <b id="b_leitura_umid_setor2">?</b>
+                                </div>
+
+
+                                <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
+
+                                <canvas id="myChart_umid_setor2"></canvas>
+
+                            </td>
+
+                        </tr>
+
+                        <th colspan="2">Setor 3</th>
+                        <tr>
+                            <td>
+                                <b>Temperatura</b> <b id="valor_leitura_temp_setor3"></b> <br>
+
+                                <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
+                                    <b id="b_leitura_temp_setor3">?</b>
+                                </div>
+                                <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
+                                <canvas id="myChart_temp_setor3"></canvas>
+                            </td>
+                            <td>
+                                <b>Umidade</b> <b id="valor_leitura_umid_setor3"></b> <br>
+                                <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
+                                    <b id="b_leitura_umid_setor3">?</b>
+                                </div>
+                                <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
+                                <canvas id="myChart_umid_setor3"></canvas>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </article>
+</body>
+
+</html>
+<script>
+
+    function Iniciar() {
+        receberNovasLeituras_umid();
+        receberNovasLeituras_temp();
+
+    }
+
+
+
+
+
+    // essas 2 funções irão recuperar seus valores do backend futuramente
+    function limiteMaximo_umid() {
+        return 90;
+    }
+
+    function limiteMinimo_umid() {
+        return 20;
+    }
+
+    // esse "sortearUmidadeSetor1()" será desnecessário quando usarmos o backend futuramente
+    function sortearUmidadeSetor1() {
+        var minimoAbsoluto = Math.abs(limiteMinimo_umid());
+        return (Math.random() * (minimoAbsoluto + limiteMaximo_umid()) - minimoAbsoluto).toFixed(1);
+    }
+
+    function receberNovasLeituras_umid() {
+        setTimeout(() => {
+
+            // jogando o "max" e "min" para a página
+
+
+            var ajusteLimiteMin = Math.abs(limiteMinimo_umid());
+
+            // esse "novoRegistro" será recuperado do backend futuramente
+            var novoRegistro = {
+                momento: '00:00:00', // tanto faz
+                leitura: Number(sortearUmidadeSetor1())
+            };
+
+            // calculo de uma posição de 0 a 100 "entre" os limites min e max
+            var posicao = (novoRegistro.leitura + ajusteLimiteMin) / (limiteMaximo_umid() + ajusteLimiteMin) * 100;
+
+
+
+            // trocando a imagem e o estilo do valor da leitura
+
+
+            b_leitura_umid_setor1.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
+            valor_leitura_umid_setor1.innerHTML = `${Math.abs(novoRegistro.leitura)}%`;
+
+            b_leitura_umid_setor2.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
+            valor_leitura_umid_setor2.innerHTML = `${Math.abs(novoRegistro.leitura)}%`;
+
+            b_leitura_umid_setor3.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
+            valor_leitura_umid_setor3.innerHTML = `${Math.abs(novoRegistro.leitura)}%`;
+
+
+
+            // atualizando o valor da leitura na página
+            b_leitura_umid_setor1.innerHTML = "|";
+            b_leitura_umid_setor2.innerHTML = "|";
+            b_leitura_umid_setor3.innerHTML = "|";
+
+
+
+            // função que agenda a recuperação da última leitura para daqui a 3 segundos
+            receberNovasLeituras_umid();
+            // if (novoRegistro.leitura >= 60 && novoRegistro.leitura <= 75) {
+            //     b_situacao_temp_setor2.innerHTML = `Normal`;
+
+            // }
+            // else if ((Math.abs(novoRegistro.leitura) > 55 && Math.abs(novoRegistro.leitura) < 60) || (Math.abs(novoRegistro.leitura) > 75 && Math.abs(novoRegistro.leitura) < 80)) {
+            //     b_situacao_temp_setor2.innerHTML = "Alerta";
+            // }
+            // else {
+            //     b_situacao_temp_setor2.innerHTML = "Crítico";
+
+            // }
+        }, 4000); // 3000 ms -> 3 segundos
+    }
+
+
+
+
+
+
+
+    // Script valores de temp setores
+    // essas 2 funções irão recuperar seus valores do backend futuramente
+    function limiteMaximo_temp() {
+        return 50;
+    }
+
+    function limiteMinimo_temp() {
+        return 0;
+    }
+
+    // esse "sortearUmidadeSetor1()" será desnecessário quando usarmos o backend futuramente
+    function sortearTemperaturaSetor1() {
+        var minimoAbsoluto = Math.abs(limiteMinimo_temp());
+        return (Math.random() * (minimoAbsoluto + limiteMaximo_temp()) - minimoAbsoluto).toFixed(1);
+    }
+
+    function receberNovasLeituras_temp() {
+        setTimeout(() => {
+
+            // jogando o "max" e "min" para a página
+
+
+            var ajusteLimiteMin = Math.abs(limiteMinimo_temp());
+
+            // // esse "novoRegistro" será recuperado do backend futuramente
+            var novoRegistro = {
+                momento: '00:00:00', // tanto faz
+                leitura: Number(sortearTemperaturaSetor1())
+            };
+
+            // // calculo de uma posição de 0 a 100 "entre" os limites min e max
+            // var posicao = (novoRegistro.leitura + ajusteLimiteMin) / (limiteMaximo2() + ajusteLimiteMin) * 100;
+
+
+
+            // trocando a imagem e o estilo do valor da leitura
+
+
+            b_leitura_temp_setor1.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
+            valor_leitura_temp_setor1.innerHTML = `${Math.abs(novoRegistro.leitura)} °C`;
+            b_leitura_temp_setor2.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
+            valor_leitura_temp_setor2.innerHTML = `${Math.abs(novoRegistro.leitura)} °C`;
+
+            b_leitura_temp_setor3.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
+            valor_leitura_temp_setor3.innerHTML = `${Math.abs(novoRegistro.leitura)} °C`;
+
+
+            // atualizando o valor da leitura na página
+            b_leitura_temp_setor1.innerHTML = "|";
+            b_leitura_temp_setor2.innerHTML = "|";
+            b_leitura_temp_setor3.innerHTML = "|";
+
+
+
+            receberNovasLeituras_temp();
+
+        }, 4000);
+
+
+    }
+
+    window.onload = Iniciar;
+
+</script>
+
+
+
+<script>
+    var ctx = document.getElementById('myChart_umid_setor1').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:15', '10:20'],
+            datasets: [{
+
+                label: 'Umidade relativa do Ar',
+                data: [60, 62, 68, 70, 65, 66],
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                fill: 'False'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart_temp_setor1').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:15', '10:20'],
+            datasets: [{
+                fill: 'False',
+                label: 'Temperatura em °C',
+                data: [22, 25, 23, 21, 20, 22],
+                backgroundColor: 'red',
+                borderColor: 'red',
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart_temp_setor2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:15', '10:20'],
+            datasets: [{
+                fill: 'False',
+                label: 'Temperatura em °C',
+                data: [25, 24, 22, 23, 24, 22],
+                backgroundColor: 'orange',
+                borderColor: 'orange',
+
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart_umid_setor2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:15', '10:20'],
+            datasets: [{
+                fill: 'False',
+                label: 'Umidade relativa do Ar',
+                data: [65, 68, 72, 70, 71, 73],
+                backgroundColor: 'purple',
+                borderColor: 'purple',
+
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart_temp_setor3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:15', '10:20'],
+            datasets: [{
+                fill: 'False',
+                label: 'Temperatura em °C',
+                data: [22, 24, 25, 26, 25, 24],
+                backgroundColor: 'yellow',
+                borderColor: 'yellow',
+
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart_umid_setor3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:15', '10:20'],
+            datasets: [{
+                fill: 'False',
+                label: 'Umidade relativa do Ar',
+                data: [73, 71, 74, 75, 75, 74],
+                backgroundColor: 'green',
+                borderColor: 'green',
+
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
