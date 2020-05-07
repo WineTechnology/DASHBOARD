@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard - Geral</title>
+
+    <!-- URL para o local onde o font awesome está instalado -->
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<body>
+    <div class="menu">
+        <header>
+            DASHBOARD Winetec
+        </header>
+        <nav>
+            <ul>
+                <li class="ativo"><i class="fas fa-tachometer-alt"></i><a href="estabelecimento_1_geral.html">Dashboard</a></li>
+                <li></i><i class="fas fa-boxes"></i><a href="../estoque.html">Estoque</a></li>
+                <li><i class="far fa-file-alt"></i><a href="../relatorio.html">Relatórios</a></li>
+                <li><i class="fas fa-chart-line"></i></i><a href="../estatisticas.html">Estatísticas</a></li>
+                <li><i class="fas fa-user-circle"></i><a href="../perfil.html">Perfil</a></li>
+                <li><i class="fas fa-cog"></i><a href="../configuracoes.html">Configurações</a></li>
+                <li><i class="fas fa-question-circle"></i><a href="../suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </div>
+    <article>
+        <div class="conteudo">
+            <div class="caixa">
+                <div class="menu_parcial">
+                    <div class="menu_estabelecimento">
+                        <nav class="menu_estabelecimento">
+                            <ul>
+                                <li><a href="../estabelecimento_1/estabelecimento_1_geral.html">Estabelecimento 1</a></li>
+                                <li class="menu_parcial_ativo"><a href="estabelecimento_2_geral.html">Estabelecimento 2</a></li>
+                                <li><a href="../estabelecimento_3/estabelecimento_3_geral.html">Estabelecimento 3</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+            
+                    <div class="menu_opcoes">
+                        <nav class="menu_parcial">
+                            <ul>
+                                <li><a href="estabelecimento_2_geral.html">Geral</a></li>
+                                <li class="menu_parcial_ativo"><a href="estabelecimento_2_temperatura.html">Temperatura</a></li>
+                                <li><a href="estabelecimento_2_umidade.html">Umidade</a></li>
+                                <li><a href="estabelecimento_2_periodicamente.html">Periodicamente</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <br><br><br><br><br><br>
+                <div class="graficos">
+                    
+                    <table class="graficos_dia">
+                        <h3>Valor Diário</h3>
+                        <tr>
+                            <td>
+                                <canvas id="myChart1"></canvas>
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+                            </td>
+                            <td>
+                                <canvas id="myChart2"></canvas>
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
+<script>
+    var ctx = document.getElementById('myChart1').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+    
+        // The data for our dataset
+        data: {
+            labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+            datasets: [{
+                label: 'Temperatura Média',
+                backgroundColor: '#f22929',
+                borderColor: '#f22929',
+                data: [16, 15, 16, 17, 16, 16, 15],
+                fill: false,
+                
+            }]
+        },
+    
+        // Configuration options go here
+        options: {
+            
+        }
+    });
+        var ctx = document.getElementById('myChart2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+    
+        // The data for our dataset
+        data: {
+            labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+            datasets: [{
+                label: 'Sensor 1',
+                backgroundColor: '#3B89DA',
+                borderColor: '#3B89DA',
+                data: [18, 17, 16, 17, 15, 18, 16],
+                fill: false,
+                
+            },
+            {
+                label: 'Sensor 2',
+                backgroundColor: '#22C058',
+                borderColor: '#22C058',
+                data: [15, 16, 17, 18, 17, 15, 15],
+                fill: false, 
+            },
+            {
+                label: 'Sensor 3',
+                backgroundColor: '#8D3AD9',
+                borderColor: '#8D3AD9',
+                data: [14, 13, 15, 16, 17, 16, 14],
+                fill: false, 
+            }
+            ]
+            
+        },
+    
+        // Configuration options go here
+        options: {
+            
+        }
+    });
+    </script>
+    
