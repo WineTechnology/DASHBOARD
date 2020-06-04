@@ -1,0 +1,411 @@
+/* GERAL */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    height: 100%;
+    background: #fefefe;
+}
+body a{
+    text-decoration: none;
+}
+.ativo{
+    background-color: #8cb732;
+    color: white;
+}
+.caixa{
+    height: 100%;
+    width: 80%;
+    margin-left: 20%;
+   
+}
+table{
+    border-spacing: 25px;
+}
+/* FIM GERAL */
+/* MENU LATERAL */
+.menu{
+    background: #3e7521;
+    width: 200px;
+    height: 100vh;
+    color: white;
+    margin: 0;
+    float: left;
+    position: fixed;
+}
+.menu header{
+    padding-left: 10px;
+    margin-bottom: 20px
+}
+.menu nav{
+    width: 100%
+}
+.menu li{
+    padding-bottom: 10px;   
+    padding-top: 10px;   
+    list-style: none;
+    margin-bottom: 10px
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+.menu i{
+    padding-left: 10px;
+}
+.menu li:hover{
+    background: #aca356;
+}
+.menu:hover .ativo{
+    background-color: #8cb732;
+}
+/* FIM MENU LATERAL */
+/* MENU PARCIAL */
+.menu_parcial{
+    float: left;
+    height: 50px;
+    width: 1000px;
+}
+.menu_parcial nav{
+    height: 100%;
+    margin: 0; 
+    border-bottom: 2px #b3c5b6 solid;
+}
+.menu_parcial nav ul{
+    margin: 0;
+    width: 90%;
+    margin-left: 5%;  
+}
+.menu_parcial li{
+    list-style: none;
+    display: inline-block;
+    padding: 12px 13px;
+    width: 150px;
+    margin-left:2%;
+    margin-right:2%;
+    text-align: center;
+    font-weight: 900;
+}
+.menu_parcial a{
+    color: #13180c;
+}
+
+.menu_parcial_ativo{
+    border-bottom: 4px #8cb732 solid;
+}
+.menu_parcial_ativo a{  
+    color: #8cb732;
+}
+.menu_parcial li:hover a{
+    color: #8cb732;
+
+}
+
+
+/* MENU ESTABELECIMENTO */
+.menu_estabelecimento li{
+    list-style: none;
+    display: inline-block;
+    padding: 12px 13px;
+    width: 222px;
+    margin-left:2%;
+    margin-right:2%;
+    text-align: center;
+    font-weight: 900;
+
+}
+/* FIM MENU ESTABELECIEMENTO */
+
+/* FIM MENU PARCIAL */
+/* CONTEUDO */
+    /* GERAL */
+    .conteudo{
+        width: 100%;
+        height: 100%;
+    }
+   
+    .conteudo .graficos_tempo_real table{
+        width: 100%;
+       
+    }
+
+    .conteudo .graficos_tempo_real td{
+        width: 460px;
+        height: 300px;
+        background: white;
+        align-items: center;
+        
+    } 
+    .conteudo .graficos_dia td{
+        width: 465px;
+        height: 250px;
+        background: white;
+        
+    } 
+
+    .gradiente_umid_setor1 {
+        float: left;
+        width: 460px;
+        background: rgb(255, 0, 100);
+
+        background: linear-gradient(90deg,
+
+            rgba(255, 0, 50, 1) 0px,
+            rgba(255, 0, 50, 1) 219px,
+            rgba(246, 242, 50, 1) 221px,
+            rgba(246, 242, 50, 1) 239px,
+            rgba(39, 255, 50, 1) 241px,
+            rgba(39, 255, 50, 1) 299px,
+            rgba(253, 240, 50, 1) 301px,
+            rgba(253, 240, 50, 1) 319px,
+            rgba(255, 0, 50, 1) 321px,
+            rgba(255, 0, 50, 1) 400px);
+    }
+
+    .gradiente_temp_setor1 {
+        float: left;
+        width: 460px;
+        background: rgb(255, 0, 100);
+
+        background: linear-gradient(90deg,
+
+            rgba(255, 0, 50, 1) 0px,
+            rgba(255, 0, 50, 1) 52px,
+            rgba(246, 242, 50, 1) 52px,
+            rgba(246, 242, 50, 1) 64px,
+            rgba(39, 255, 50, 1) 64px,
+            rgba(39, 255, 50, 1) 72px,
+            rgba(253, 240, 50, 1) 72px,
+            rgba(253, 240, 50, 1) 80px,
+            rgba(255, 0, 50, 1) 80px,
+            rgba(255, 0, 50, 1) 400px);
+    }
+
+    #div_posicao_umid_setor1 {
+        float: left;
+        color: white;
+        margin-left: 0%;
+        width: 460px;
+    }
+
+    #div_posicao_temp_setor1 {
+        float: left;
+        color: white;
+        margin-left: 0%;
+        width: 460px;
+    }
+
+
+    /* Tentativa de alarmes */
+    #div_leitura_umid_setor1 {
+        font-size: 30pt;
+        font-weight: bold;
+        padding: 30px 20px -22px 20px;
+        color: white;
+    }
+    /* FIM GERAL */
+    /* PERIODICAMENTE */
+    .conteudo .div_consulta{
+        float: left;
+        margin-top: 30px;
+        width: 80%;
+        color: #13180c;  
+    }
+    .elementos_consulta{
+        color: #13180c;
+        margin-top: 20px; 
+        margin-left: 50px;
+        height: 30px;
+        width: 100px;
+        font-size: 18px;
+    }
+
+    #button_pesquisa_consulta{
+        border: 0;
+        background: #8cb732;
+        color: white;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+    .div_resultado_pesquisa{
+        margin-top: 20px;
+        float: left;
+        width: 1000px;
+        color: #b3c5b6;
+        
+    }
+    .div_resultado_pesquisa header{
+        text-align: center;
+        border-bottom: 2px #b3c5b6 solid;
+    }
+    /* FIM PERIODICAMENTE */
+    /* PERFIL */
+    /* .conteudo .caixa .div_perfil{
+        margin-top: 30px; 
+        float: left;
+    }
+    .conteudo .caixa .div_perfil header {
+        width: 500px;
+        border-bottom: 2px #591316 solid;
+        float: left;
+
+    }
+    
+    .conteudo .caixa .div_perfil article .div_elementos_perfil{
+        margin-left: 50px;
+        border-bottom:  2px #591316 solid;
+        margin-bottom: 20px;
+    }
+    .div_dados li{
+        list-style: none;
+        border-bottom: 2px #591316 solid;
+        margin-top: 20px;
+    }
+    .div_dados{
+        float: left;
+        color: #591316;
+    }
+    
+
+    .div_dados .div_elementos_perfil{
+        width: 1000px;
+        margin-top: 50px; 
+        
+        float: left;
+    }
+    .div_dados .div_elementos_perfil .div_descricao_elementos_perfil{
+        
+        width: 300px;
+        height: 100%;
+        float: left;
+    }
+    .div_dados .div_elementos_perfil .div_dados_elementos_perfil{
+        width: 700px;
+        float: left;
+    }
+    .div_dados .div_elementos_perfil .div_dados_elementos_perfil table{
+        width: 100%;
+        border: 1px #eeeeee solid;
+        border-left: 3px #eeeeee solid;
+        border-spacing: 0px; 
+        
+    }
+    .div_dados .div_elementos_perfil .div_dados_elementos_perfil table strong{
+        color: #f22929;
+    }
+    .div_dados .div_elementos_perfil .div_dados_elementos_perfil table td{
+        border: 1px #eeeeee solid;
+        padding-left: 10px;
+    } */
+    /* FIM PERFIL */
+
+/* TESTE */
+
+.div_sector1{
+    width: 1000px;
+    height: 430px;
+    text-align: center;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+.div_sector1 #myChart_temp_setor1{
+    border-radius: 10px;
+}
+.div_sector1 #div_posicao_temp_setor1{
+    margin-left: 10px;
+}
+.div_sector1 #div_posicao_umid_setor1{
+    margin-left: 10px;
+}
+
+.box_charts{
+    width: 480px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.div_sector1 header{
+    padding: 25px;
+}
+
+
+
+
+.div_sector2{
+    width: 1000px;
+    height: 430px;
+    text-align: center;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+.div_sector2 #myChart_temp_setor1{
+    border-radius: 10px;
+}
+.div_sector2 #div_posicao_temp_setor1{
+    margin-left: 10px;
+}
+.div_sector2 #div_posicao_umid_setor1{
+    margin-left: 10px;
+}
+.div_sector2 header{
+    padding: 25px;
+}
+
+
+
+.div_sector3{
+    width: 1000px;
+    height: 430px;
+    text-align: center;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+.div_sector3 #myChart_temp_setor1{
+    border-radius: 10px;
+}
+.div_sector3 #div_posicao_temp_setor1{
+    margin-left: 10px;
+}
+.div_sector3 #div_posicao_umid_setor1{
+    margin-left: 10px;
+}
+.div_sector3 header{
+    padding: 25px;
+}
+
+.signal{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;      
+}
+.signal_red_off{
+    background-color: rgb(155, 0, 31);    
+}
+.signal_yellow_off{
+    background-color: rgb(141, 134, 31);
+}
+.signal_green_off{
+    background-color: rgb(24, 168, 31);
+}
+
+.signal_red_on{
+    background-color: rgba(255, 0, 50, 1);    
+}
+.signal_yellow_on{
+    background-color: rgba(253, 240, 50, 1);
+}
+.signal_green_on{
+    background-color: rgba(39, 255, 50, 1);
+}
+
+
+/* FIM CONTEUDO */
