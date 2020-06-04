@@ -67,81 +67,97 @@
                 </div>
                 <br><br><br><br>
                 <div class="graficos">
-                    <table class="graficos_tempo_real">
-                        <th colspan="2">Setor 1</th>
-                        <tr>
-                            <td>
-                                <b>Temperatura</b> <b id="valor_leitura_temp_setor1"></b> <br>
+                    <br>
+                    <br>
+                    <div class="div_sector1">
 
-                                <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
-                                    <b id="b_leitura_temp_setor1">?</b>
-                                </div>
-                                <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
-                                <canvas id="myChart_temp_setor1"></canvas>
-                            </td>
+                        <header>
+                            <b style="font-size: 30px;">Setor 1</b>
+                            <div class="signal signal_red_off"></div>
+                            <div class="signal signal_yellow_off"></div>
+                            <div class="signal signal_green_on"></div>
+                        </header>
+
+                        <div class="box_charts">
+                            <b>Temperatura</b> <b id="valor_leitura_temp_setor1"></b> <br>
+
+                            <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
+                                <b id="b_leitura_temp_setor1"><i class="fas fa-sort-up"></i></b>
+                            </div>
+                            <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+                            <canvas id="myChart_temp_setor1"></canvas>
+                        </div>
+                        <div class="box_charts">
+                            <b>Umidade</b> <b id="valor_leitura_umid_setor1"></b> <br>
+                            <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
+                                <b id="b_leitura_umid_setor1"><i class="fas fa-sort-up"></i></b>
+                            </div>
+                            <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+                            <canvas id="myChart_umid_setor1"></canvas>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="div_sector2">
+
+                        <header>
+                            <b style="font-size: 30px;">Setor 2</b>
+                            <div class="signal signal_red_off"></div>
+                            <div class="signal signal_yellow_on"></div>
+                            <div class="signal signal_green_off"></div>
+                        </header>
+
+                        <div class="box_charts">
+                            <b>Temperatura</b> <b id="valor_leitura_temp_setor2"></b> <br>
+                            <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
+                                <b id="b_leitura_temp_setor2"><i class="fas fa-sort-up"></i></b>
+                            </div>
+
+                            <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+
+                            <canvas id="myChart_temp_setor2"></canvas>
+                        </div>
+                        <div class="box_charts">
+                            <b>Umidade</b> <b id="valor_leitura_umid_setor2"></b> <br>
+                            <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
+                                <b id="b_leitura_umid_setor2"><i class="fas fa-sort-up"></i></b>
+                            </div>
 
 
+                            <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
 
-                            <td>
-                                <b>Umidade</b> <b id="valor_leitura_umid_setor1"></b> <br>
-                                <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
-                                    <b id="b_leitura_umid_setor1">?</b>
-                                </div>
-                                <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
-                                <canvas id="myChart_umid_setor1"></canvas>
+                            <canvas id="myChart_umid_setor2"></canvas>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="div_sector3">
 
-                            </td>
-                        </tr>
+                        <header>
+                            <b style="font-size: 30px;">Setor 3</b>
+                            <div class="signal signal_red_on"></div>
+                            <div class="signal signal_yellow_off"></div>
+                            <div class="signal signal_green_off"></div>
+                        </header>
 
-                        <th colspan="2">Setor 2</th>
-                        <tr>
-                            <td>
-                                <b>Temperatura</b> <b id="valor_leitura_temp_setor2"></b> <br>
-                                <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
-                                    <b id="b_leitura_temp_setor2">?</b>
-                                </div>
+                        <div class="box_charts">
+                            <b>Temperatura</b> <b id="valor_leitura_temp_setor3"></b> <br>
 
-                                <b>Situação:</b><b id="b_situacao_temp_setor2"> </b>
+                            <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
+                                <b id="b_leitura_temp_setor3"><i class="fas fa-sort-up"></i></b>
+                            </div>
+                            <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
+                            <canvas id="myChart_temp_setor3"></canvas>
+                        </div>
+                        <div class="box_charts">
+                            <b>Umidade</b> <b id="valor_leitura_umid_setor3"></b> <br>
+                            <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
+                                <b id="b_leitura_umid_setor3"><i class="fas fa-sort-up"></i></b>
+                            </div>
+                            <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
+                            <canvas id="myChart_umid_setor3"></canvas>
+                        </div>
+                    </div>
+                    <br>
 
-                                <canvas id="myChart_temp_setor2"></canvas>
-
-                            </td>
-                            <td>
-                                <b>Umidade</b> <b id="valor_leitura_umid_setor2"></b> <br>
-                                <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
-                                    <b id="b_leitura_umid_setor2">?</b>
-                                </div>
-
-
-                                <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
-
-                                <canvas id="myChart_umid_setor2"></canvas>
-
-                            </td>
-
-                        </tr>
-
-                        <th colspan="2">Setor 3</th>
-                        <tr>
-                            <td>
-                                <b>Temperatura</b> <b id="valor_leitura_temp_setor3"></b> <br>
-
-                                <div class="gradiente_temp_setor1" id="div_posicao_temp_setor1">
-                                    <b id="b_leitura_temp_setor3">?</b>
-                                </div>
-                                <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
-                                <canvas id="myChart_temp_setor3"></canvas>
-                            </td>
-                            <td>
-                                <b>Umidade</b> <b id="valor_leitura_umid_setor3"></b> <br>
-                                <div class="gradiente_umid_setor1" id="div_posicao_umid_setor1">
-                                    <b id="b_leitura_umid_setor3">?</b>
-                                </div>
-                                <b>Situação:</b> <b id="b_situacao_temp_setor2"> </b>
-                                <canvas id="myChart_umid_setor3"></canvas>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
             </div>
 
@@ -211,10 +227,7 @@
 
 
 
-            // atualizando o valor da leitura na página
-            b_leitura_umid_setor1.innerHTML = "|";
-            b_leitura_umid_setor2.innerHTML = "|";
-            b_leitura_umid_setor3.innerHTML = "|";
+        
 
 
 
@@ -286,11 +299,6 @@
             b_leitura_temp_setor3.style.marginLeft = `${Math.abs(novoRegistro.leitura) * 4}px`;
             valor_leitura_temp_setor3.innerHTML = `${Math.abs(novoRegistro.leitura)} °C`;
 
-
-            // atualizando o valor da leitura na página
-            b_leitura_temp_setor1.innerHTML = "|";
-            b_leitura_temp_setor2.innerHTML = "|";
-            b_leitura_temp_setor3.innerHTML = "|";
 
 
 
