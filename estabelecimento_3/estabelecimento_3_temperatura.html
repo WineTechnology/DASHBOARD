@@ -60,20 +60,24 @@
                 </div>
                 <br><br><br><br><br><br>
                 <div class="graficos">
-                    
-                    <table class="graficos_dia">
-                        <h3>Valor Diário</h3>
-                        <tr>
-                            <td>
-                                <canvas id="myChart1"></canvas>
+                    <div class="div_sector1">
+
+                        <header>
+                            <b style="font-size: 30px;">Valor Diário</b>
+                            <div class="signal signal_red_off"></div>
+                            <div class="signal signal_yellow_off"></div>
+                            <div class="signal signal_green_on"></div>
+                        </header>
+
+                        <div class="box_charts">
+                            <canvas id="myChart1"></canvas>
                                 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-                            </td>
-                            <td>
-                                <canvas id="myChart2"></canvas>
+                        </div>
+                        <div class="box_charts">
+                            <canvas id="myChart2"></canvas>
                                 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-                            </td>
-                        </tr>
-                    </table>
+                        </div>
+                    </div>
 
                 </div>
             </div>
